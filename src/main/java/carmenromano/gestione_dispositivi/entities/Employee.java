@@ -21,17 +21,21 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true, nullable = false)
-    private String username;
-
-    @Column(unique = true, nullable = false)
-    private String email;
 
     @Column(nullable = false)
     private String firstname;
 
     @Column(nullable = false)
     private String lastname;
+
+    @Column(unique = true, nullable = false)
+    private String username;
+
+    private String email;
+
+    @Column(nullable = false)
+    private String avatar;;
+
 
     @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
     @JsonIgnore
